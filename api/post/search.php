@@ -2,20 +2,22 @@
   // Headers
   header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json; charset=UTF-8');
- 
-  // include database and object files
+
   include_once '../../config/Database.php';
   include_once '../../models/Post.php';
-
-  // Instantitiate DB & Connect
+ 
+  // include database and object files
   $database = new Database();
   $db = $database->connect();
 
   // Instantiate blog post object
   $post = new Post($db);
 
-  // Blog post query
-  $result = $post->read();
+  // get keywords
+  $keywords = isset($_GET["s"]) ? $_GET["s"] : "";
+ 
+  // query posts
+  $result = $post->search($keywords);
   // Get row count
   $num = $result->rowCount();
 
@@ -24,7 +26,7 @@
     // Post Array
     $posts_arr = array();
     $posts_arr['data'] = array();
-
+    
     // retrieve our table contents
     // fetch() is faster than fetchAll()
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop

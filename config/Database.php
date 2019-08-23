@@ -4,7 +4,7 @@
     private $host = 'localhost';
     private $db_name = 'myblog';
     private $username = 'root';
-    private $password = '';
+    private $password = 'i#30L^w@';
     private $conn;
 
     // DB Connect
@@ -17,7 +17,7 @@
       } catch(PDOException $e) {
         echo 'Connection Error: ' . $e->getMessage();
       }
-
+      
       return $this->conn;
     }
   }
