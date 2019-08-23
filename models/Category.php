@@ -115,7 +115,7 @@
         return false;
     }
   
-    // Serach category
+    // Search category
     public function search($keywords) {
       // Create query
       $query = 'SELECT * 
@@ -137,6 +137,51 @@
       $stmt->execute();
          
       return $stmt;
+    }
+
+    /**
+     * Paging Category
+     * @param - $from_data_num
+     * @param - $datas_per_page
+     */
+    public function read_paging($from_data_num, $datas_per_page) {
+ 
+      // select query
+      $query = "SELECT *
+                FROM " . $this->table . "
+                ORDER BY created_at 
+                DESC
+                LIMIT ?, ?";
+    
+      // prepare query statement
+      $stmt = $this->conn->prepare($query);
+    
+      // bind variable values
+      $stmt->bindParam(1, $from_data_num, PDO::PARAM_INT);
+      $stmt->bindParam(2, $datas_per_page, PDO::PARAM_INT);
+    
+      // execute query
+      $stmt->execute();
+    
+      // return values from database
+      return $stmt;
+    }
+
+    /**
+     * Paging Categry 
+     * count method
+     */
+    public function count() {
+      $query = "SELECT COUNT(*) as total_rows FROM " . $this->table . "";
+   
+      // prepare query statement
+      $stmt = $this->conn->prepare($query);
+      // execute query
+      $stmt->execute();
+      // retrieve our table contents
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+   
+      return $row['total_rows'];
     }
 
   }

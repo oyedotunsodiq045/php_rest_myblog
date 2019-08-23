@@ -188,5 +188,52 @@
       return $stmt;
 
     }
+
+    /**
+     * Paging Post
+     * @param - $from_data_num
+     * @param - $datas_per_page
+     */
+    public function read_paging($from_data_num, $datas_per_page) {
+ 
+      // select query
+      $query = "SELECT c.name as category_name, p.id, p.category_id, p.title, p.body, p.author, p.created_at 
+                FROM " . $this->table . " p
+                LEFT JOIN categories c
+                ON p.category_id = c.id
+                ORDER BY p.created_at 
+                DESC
+                LIMIT ?, ?";
+    
+      // prepare query statement
+      $stmt = $this->conn->prepare( $query );
+    
+      // bind variable values
+      $stmt->bindParam(1, $from_data_num, PDO::PARAM_INT);
+      $stmt->bindParam(2, $datas_per_page, PDO::PARAM_INT);
+    
+      // execute query
+      $stmt->execute();
+    
+      // return values from database
+      return $stmt;
+    }
+
+    /**
+     * Paging Post 
+     * count method
+     */
+    public function count() {
+      $query = "SELECT COUNT(*) as total_rows FROM " . $this->table . "";
+   
+      // prepare query statement
+      $stmt = $this->conn->prepare($query);
+      // execute query
+      $stmt->execute();
+      // retrieve our table contents
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+   
+      return $row['total_rows'];
+    }
     
   }
