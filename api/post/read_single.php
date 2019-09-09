@@ -38,13 +38,24 @@ if ($post->title != null) {
     http_response_code(200);
   
     // Make JSON
-    print_r(json_encode($post_arr));
+    print_r(json_encode(
+      array(
+        'status' => true,
+        'message' => 'Post Found',
+        'data' => $post_arr
+      )
+    ));
 } else {
   // set response code - 404 Not found
   http_response_code(404);
 
   // tell the user post does not exist
-  echo json_encode(array("message" => "Post does not exist."));
+  echo json_encode(
+    array(
+      'status' => false,
+      "message" => "Post does not exist."
+    )
+  );
 }
 
 

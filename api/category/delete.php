@@ -27,13 +27,19 @@
     http_response_code(200);
 
     echo json_encode(
-      array('message' => 'Category Deleted')
+      array(
+        'status' => true,
+        'message' => 'Category Deleted'
+      )
     );
   } else {
     // set response code - 503 service unavailable
     http_response_code(503);
 
     echo json_encode(
-      array('message' => 'Category Not Deleted')
+      array(
+        'status' => false,
+        'message' => 'Category Not Deleted'
+      )
     );
   }

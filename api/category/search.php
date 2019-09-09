@@ -50,7 +50,13 @@
         http_response_code(200);
 
         // Turn to JSON and echo
-        echo json_encode($cat_arr);
+        echo json_encode(
+            array(
+                'status' => true,
+                'message' => 'Searched Category Found',
+                'data' => $cat_arr['data']
+            )
+        );
 
     } else {
 
@@ -59,7 +65,10 @@
 
         // No Category
         echo json_encode(
-            array('message' => 'No Category Found')
+            array(
+                'status' => false,
+                'message' => 'No Category Found'
+            )
         );
     }
     

@@ -12,7 +12,7 @@
     // utilities
     $utilities = new Utilities();
     
-    // instantiate database and product object
+    // instantiate database and category object
     $database = new Database();
     $db = $database->connect();
     
@@ -58,7 +58,13 @@
         http_response_code(200);
     
         // make it json format
-        echo json_encode($cat_arr);
+        echo json_encode(
+            array(
+                'status' => true,
+                'message' => 'Categories Paging',
+                'data' => $cat_arr['data']
+            )
+        );
     } else {
     
         // set response code - 404 Not found
@@ -66,7 +72,10 @@
     
         // tell the user category does not exist
         echo json_encode(
-            array("message" => "No categories found.")
+            array(
+                'status' => false,
+                "message" => "No categories found."
+            )
         );
     }
 ?>

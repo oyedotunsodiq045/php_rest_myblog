@@ -1,8 +1,9 @@
 <?php
   // Headers
   header('Access-Control-Allow-Origin: *');
-  header('Content-Type: application/json');
+  header('Content-Type: application/json; charset=UTF-8');
   header('Access-Control-Allow-Method: POST');
+  header("Access-Control-Max-Age: 3600");
   header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Method, Authorization, X-Requested-With');
 
   include_once '../../config/Database.php';
@@ -27,13 +28,19 @@
     http_response_code(201);
 
     echo json_encode(
-      array('message' => 'Category Created')
+      array(
+        'status' => true,
+        'message' => 'Category Created'
+      )
     );
   } else {
     // set response code - 503 service unavailable
     http_response_code(503);
 
     echo json_encode(
-      array('message' => 'Category Not Created')
+      array(
+        'status' => false,
+        'message' => 'Category Not Created'
+      )
     );
   }

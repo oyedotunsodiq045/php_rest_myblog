@@ -21,12 +21,11 @@
   $data = json_decode(file_get_contents("php://input"));
 
   // Check to make sure data inputed are not empty
-  if (
-    !empty($post->title) &&
-    !empty($post->body) &&
-    !empty($post->author) &&
-    !empty($post->category_id)
-  ) { // Set post property values
+  // if ( ! empty($post->title) && 
+  //       ! empty($post->body) && 
+  //       ! empty($post->author) && 
+  //       ! empty($post->category_id) 
+  //     ) { // Set post property values
     $post->title = $data->title;
     $post->body = $data->body;
     $post->author = $data->author;
@@ -39,21 +38,27 @@
       http_response_code(201);
       
       echo json_encode(
-          array('message' => 'Post Created')
+          array(
+            'status' => true,
+            'message' => 'Post Created'
+          )
       );
     } else {
       // set response code - 503 service unavailable
       http_response_code(503);
 
       echo json_encode(
-          array('message' => 'Post Not Created')
+          array(
+            'status' => false,
+            'message' => 'Post Not Created'
+          )
       );
     }
-  } else {
-    // set response code - 400 bad request
-    http_response_code(400);
+  // } else {
+  //   // set response code - 400 bad request
+  //   http_response_code(400);
     
-    echo json_encode(
-      array("message" => "Post Not Created. Incomplete Data.")
-    );
-  }
+  //   echo json_encode(
+  //     array("message" => "Post Not Created. Incomplete Data.")
+  //   );
+  // }

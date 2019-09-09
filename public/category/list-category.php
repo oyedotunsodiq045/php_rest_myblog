@@ -22,7 +22,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Frontend for Brad Traversy PHP_REST_MYBLOG API">
-    <meta name="keywords" content="HTML5,Bootstrap,cURL,PHP">
+    <meta name="keywords" content="HTML5,Bootstrap,cURL,PHP,API">
     <meta name="author" content="Sodiq 'Stark' Oyedotun">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -35,11 +35,13 @@
         <hr>
         <?php foreach($result as $key): ?>
             <ul class="list-group mb-3">
-                <?php foreach($key as $val): ?>
-                    <li class="list-group-item">Id: <?php echo $val[id]; ?></li>
-                    <li class="list-group-item">Name: <?php echo $val[name]; ?></li>
-                    <br>
-                <?php endforeach; ?>
+                <?php if(is_array($key) || is_object($key)): ?>
+                    <?php foreach($key as $val): ?>
+                        <li class="list-group-item list-group-item-primary">Id: <?php echo $val[id]; ?></li>
+                        <li class="list-group-item list-group-item-secondary">Name: <?php echo $val[name]; ?></li>
+                        <br>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </ul>
         <?php endforeach; ?>
     </div>

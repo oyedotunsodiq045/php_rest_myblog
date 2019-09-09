@@ -42,7 +42,13 @@
     http_response_code(200);
 
     // Turn to JSON & output
-    echo json_encode($cat_arr);
+    echo json_encode(
+      array(
+        'status' => true,
+        'message' => 'Categories Found',
+        'data' => $cat_arr['data']
+      )
+    );
   } else {
     
     // set response code - 404 Not found
@@ -50,7 +56,10 @@
     
     // No Categories
     echo json_encode(
-      array('message' => 'No Categories Found')
+      array(
+        'status' => false,
+        'message' => 'No Categories Found'
+      )
     );
   }
   

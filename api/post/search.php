@@ -55,7 +55,13 @@
     http_response_code(200);
 
     // Turn to JSON & output
-    echo json_encode($posts_arr);
+    echo json_encode(
+      array(
+        'status' => true,
+        'message' => 'Searched Post Found',
+        'data' => $posts_arr['data']
+      )
+    );
   } else {
  
     // set response code - 404 Not found
@@ -63,7 +69,10 @@
     
     // No Posts
     echo json_encode(
-      array('message' => 'No Post Found')
+      array(
+        'status' => false,
+        'message' => 'No Post Found'
+      )
     );
   }
   

@@ -35,7 +35,10 @@
     http_response_code(200);
 
     echo json_encode(
-      array('message' => 'Post Updated')
+      array(
+        'status' => true,
+        'message' => 'Post Updated'
+      )
     );
   } else {
     
@@ -43,6 +46,9 @@
     http_response_code(503);
     
     echo json_encode(
-      array('message' => 'Post Not Updated')
+      array(
+        'status' => false,
+        'message' => 'Post Not Updated'
+      )
     );
   }

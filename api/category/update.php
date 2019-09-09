@@ -29,13 +29,19 @@
     http_response_code(200);
 
     echo json_encode(
-      array('message' => 'Category Updated')
+      array(
+        'status' => true,
+        'message' => 'Category Updated'
+      )
     );
   } else {
     // set response code - 503 service unavailable
     http_response_code(503);
 
     echo json_encode(
-      array('message' => 'Category Not Updated')
+      array(
+        'status' => false,
+        'message' => 'Category Not Updated'
+      )
     );
   }

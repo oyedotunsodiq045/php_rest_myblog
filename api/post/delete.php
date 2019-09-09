@@ -30,7 +30,10 @@
     http_response_code(200);
 
     echo json_encode(
-        array('message' => 'Post Deleted')
+        array(
+          'status' => true,
+          'message' => 'Post Deleted'
+        )
     );
   } else {
     
@@ -38,6 +41,9 @@
     http_response_code(503);
 
     echo json_encode(
-        array('message' => 'Post Not Deleted')
+        array(
+          'status' => true,
+          'message' => 'Post Not Deleted'
+        )
     );
   }

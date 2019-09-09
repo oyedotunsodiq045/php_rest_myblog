@@ -62,7 +62,13 @@
         http_response_code(200);
     
         // make it json format
-        echo json_encode($posts_arr);
+        echo json_encode(
+            array(
+                'status' => true,
+                'message' => 'Post(s) Found',
+                'data' => $posts_arr["data"]
+            )
+        );
     } else {
     
         // set response code - 404 Not found
@@ -70,7 +76,10 @@
     
         // tell the user posts does not exist
         echo json_encode(
-            array("message" => "No posts found.")
+            array(
+                'status' => false,
+                "message" => "No post(s) Found."
+            )
         );
     }
 ?>
