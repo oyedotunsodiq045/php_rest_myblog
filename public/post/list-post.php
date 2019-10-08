@@ -2,6 +2,7 @@
 
     // Method 1
     $url = "http://localhost/php_rest_myblog/api/post/read.php";
+    // $url = "http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/post/read.php";
     // $ch = curl_init();
     // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // curl_setopt($ch, CURLOPT_URL, $url);
@@ -37,12 +38,12 @@
             <ul class="list-group mb-3">
                 <?php if(is_array($key) || is_object($key)): ?>
                     <?php foreach($key as $val): ?>
-                        <li class="list-group-item list-group-item-success">Id: <?php echo $val[id]; ?></li>
-                        <li class="list-group-item list-group-item-secondary">Title: <?php echo $val[title]; ?></li>
-                        <li class="list-group-item list-group-item-dark">Body: <?php echo $val[body]; ?></li>
-                        <li class="list-group-item list-group-item-primary">Author: <?php echo $val[author]; ?></li>
-                        <li class="list-group-item list-group-item-info">Category Id: <?php echo $val[category_id]; ?></li>
-                        <li class="list-group-item list-group-item-warning">Category Name: <?php echo $val[category_name]; ?></li>
+                        <li class="list-group-item list-group-item-success">Id: <?php echo $val['id']; ?></li>
+                        <li class="list-group-item list-group-item-secondary">Title: <?php echo $val['title']; ?></li>
+                        <li class="list-group-item list-group-item-dark">Body: <?php echo $val['body']; ?></li>
+                        <li class="list-group-item list-group-item-primary">Author: <?php echo $val['author']; ?></li>
+                        <li class="list-group-item list-group-item-info">Category Id: <?php echo $val['category_id']; ?></li>
+                        <li class="list-group-item list-group-item-warning">Category Name: <?php echo $val['category_name']; ?></li>
                         <br>
                     <?php endforeach; ?>
                 <?php endif; ?>

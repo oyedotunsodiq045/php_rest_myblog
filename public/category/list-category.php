@@ -2,6 +2,7 @@
 
     // Method 1
     $url = "http://localhost/php_rest_myblog/api/category/read.php";
+    // $url = "http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read.php";
     // $ch = curl_init();
     // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // curl_setopt($ch, CURLOPT_URL, $url);
@@ -37,8 +38,8 @@
             <ul class="list-group mb-3">
                 <?php if(is_array($key) || is_object($key)): ?>
                     <?php foreach($key as $val): ?>
-                        <li class="list-group-item list-group-item-primary">Id: <?php echo $val[id]; ?></li>
-                        <li class="list-group-item list-group-item-secondary">Name: <?php echo $val[name]; ?></li>
+                        <li class="list-group-item list-group-item-primary">Id: <?php echo $val['id']; ?></li>
+                        <li class="list-group-item list-group-item-secondary">Name: <?php echo $val['name']; ?></li>
                         <br>
                     <?php endforeach; ?>
                 <?php endif; ?>

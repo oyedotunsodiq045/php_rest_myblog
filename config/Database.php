@@ -5,6 +5,9 @@
     private $db_name = 'myblog';
     private $username = 'root';
     private $password = 'i#30L^w@';
+    // private $db_name = 'id6475131_myblog';
+    // private $username = 'id6475131_root';
+    // private $password = 'i#30L^w@';
     private $conn;
 
     // DB Connect
