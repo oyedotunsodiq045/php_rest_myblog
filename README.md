@@ -13,13 +13,19 @@ Import the myblog.sql file, change the params in the config/Database.php file to
 ### CATEGORIES
 
 CREATE A CATEGORY
+
 METHOD - POST
+
 URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/create.php
+
 SAMPLE REQUEST
+
 {
     "name": "Job"
 }
+
 SAMPLE RESPONSE
+
 {
     "status": true,
     "message": "Category Created"
@@ -27,9 +33,13 @@ SAMPLE RESPONSE
 
 
 GET ALL CATEGORIES
+
 METHOD - GET
+
 URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read.php
+
 SAMPLE RESPONSE
+
 {
     "status": true,
     "message": "Categories Found",
@@ -67,9 +77,13 @@ SAMPLE RESPONSE
 
 
 GET A CATEGORY
+
 METHOD - GET
+
 URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read_single.php?id=1
+
 SAMPLE RESPONSE
+
 {
     "status": true,
     "message": "Category Found",
@@ -81,16 +95,23 @@ SAMPLE RESPONSE
 
 
 UPDATE A CATEGORY
+
 METHOD - PUT
+
 URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/update.php
+
 HEADER - KEY - Content-Type
 	 VALUE - application/json
+
 SAMPLE REQUEST
+
 {
     "id": "7",
     "name": "Insurtech"
 }
+
 SAMPLE RESPONSE
+
 {
     "status": true,
     "message": "Category Updated"
@@ -98,15 +119,22 @@ SAMPLE RESPONSE
 
 
 DELETE A CATEGORY
+
 METHOD - DELETE
+
 URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/delete.php
+
 HEADER - KEY - Authorization
 	 VALUE - application/json
+
 SAMPLE REQUEST
+
 {
     "id": "7"
 }
+
 SAMPLE RESPONSE
+
 {
     "status": true,
     "message": "Category Deleted"
@@ -114,9 +142,13 @@ SAMPLE RESPONSE
 
 
 SEARCH BLOG CATEGORY
+
 METHOD - GET
+
 URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/search.php?s=tech
+
 SAMPLE RESPONSE
+
 {
     "status": true,
     "message": "Searched Category Found",
@@ -128,10 +160,15 @@ SAMPLE RESPONSE
     ]
 }
 
+
 GET ALL CATEGORY - PAGING
+
 METHOD - GET
+
 URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read_paging.php
+
 SAMPLE RESPONSE
+
 {
     "status": true,
     "message": "Categories Paging",
@@ -158,6 +195,7 @@ SAMPLE RESPONSE
         }
     ]
 }
+
 
 ### Author
 
