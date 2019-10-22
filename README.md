@@ -1,45 +1,47 @@
 # PHP REST API
 
-> This is a simple PHP REST API from scratch with no framework.
+This is a simple PHP REST API from scratch with no framework.
 
-## Quick Start
+# Quick Start
 
 Import the myblog.sql file, change the params in the config/Database.php file to your own
 
-## App Info
+### Testing
 
-## Testing
+### Categories
 
-### CATEGORIES
+#### Create a Category
 
-CREATE A CATEGORY
+* Method - POST
 
-METHOD - POST
+* URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/create.php
 
-URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/create.php
+* Sample Request
 
-SAMPLE REQUEST
-
+```
 {
     "name": "Job"
 }
+```
 
-SAMPLE RESPONSE
+* Sample Response
 
+```
 {
     "status": true,
     "message": "Category Created"
 }
+```
 
+#### Get all Categories
 
-GET ALL CATEGORIES
+* Method - GET
 
-METHOD - GET
+* URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read.php
 
-URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read.php
+* Sample Response
 
-SAMPLE RESPONSE
-
+```
 {
     "status": true,
     "message": "Categories Found",
@@ -74,16 +76,17 @@ SAMPLE RESPONSE
         }
     ]
 }
+```
 
+#### Get a Category
 
-GET A CATEGORY
+* Method - GET
 
-METHOD - GET
+* URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read_single.php?id=1
 
-URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read_single.php?id=1
+* Sample Response
 
-SAMPLE RESPONSE
-
+```
 {
     "status": true,
     "message": "Category Found",
@@ -92,63 +95,82 @@ SAMPLE RESPONSE
         "name": "Technology"
     }
 }
+```
 
+#### Update a Category
 
-UPDATE A CATEGORY
+* Method - PUT
 
-METHOD - PUT
+* URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/update.php
 
-URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/update.php
+* HEADER
 
-HEADER - KEY - Content-Type
-	 VALUE - application/json
+```
+{
+    "Key": "Content-Type",
+    "Value": "application/json"
+}
+```
 
-SAMPLE REQUEST
+* Sample Request
 
+```
 {
     "id": "7",
     "name": "Insurtech"
 }
+```
 
-SAMPLE RESPONSE
+* Sample Response
 
+```
 {
     "status": true,
     "message": "Category Updated"
 }
+```
 
+#### Delete a Category
 
-DELETE A CATEGORY
+* Method - DELETE
 
-METHOD - DELETE
+* URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/delete.php
 
-URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/delete.php
+* HEADER
 
-HEADER - KEY - Authorization
-	 VALUE - application/json
+```
+{
+    "Key": "Content-Type",
+    "Value": "application/json"
+}
+```
 
-SAMPLE REQUEST
+* Sample Request
 
+```
 {
     "id": "7"
 }
+```
 
-SAMPLE RESPONSE
+* Sample Response
 
+```
 {
     "status": true,
     "message": "Category Deleted"
 }
+```
 
+#### Search Blog Category
 
-SEARCH BLOG CATEGORY
+* Method - GET
 
-METHOD - GET
+* URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/search.php?s=tech
 
-URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/search.php?s=tech
+* Sample Response
 
-SAMPLE RESPONSE
-
+```
 {
     "status": true,
     "message": "Searched Category Found",
@@ -159,16 +181,17 @@ SAMPLE RESPONSE
         }
     ]
 }
+```
 
+#### Get all Category - Paging
 
-GET ALL CATEGORY - PAGING
+* Method - GET
 
-METHOD - GET
+* URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read_paging.php
 
-URL - http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/category/read_paging.php
+* Sample Request
 
-SAMPLE RESPONSE
-
+```
 {
     "status": true,
     "message": "Categories Paging",
@@ -195,7 +218,7 @@ SAMPLE RESPONSE
         }
     ]
 }
-
+```
 
 ### Author
 
