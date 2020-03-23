@@ -222,7 +222,7 @@ Import the myblog.sql file, change the params in the config/Database.php file to
 
 #### View on Docgen
 
-* URL - http://soyedotunprojectdemos.000webhostapp.com/lsecm/index.html
+* [URL](http://soyedotunprojectdemos.000webhostapp.com/php_rest_myblog/api/public/index.html)
 * LOCAL_URL - http://localhost/php_rest_myblog/api/public/index.html
 
 ![Task screenshot](screenshot.png)
