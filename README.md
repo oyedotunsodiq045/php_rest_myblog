@@ -220,6 +220,13 @@ Import the myblog.sql file, change the params in the config/Database.php file to
 }
 ```
 
+#### View on Docgen
+
+* URL - http://soyedotunprojectdemos.000webhostapp.com/lsecm/index.html
+* LOCAL_URL - http://localhost/php_rest_myblog/api/public/index.html
+
+![Task screenshot](screenshot.png)
+
 ### Author
 
 Brad Traversy
@@ -227,7 +234,6 @@ Brad Traversy
 
 Sodiq Oyedotun
 [Soyedotun Media](http://oyedotunsodiq.000webhostapp.com/)
-[Soyedotun Media](http://mba-ies-fps.000webhostapp.com/sodiqoyedotun.com/index.html)
 
 ### Version
 
