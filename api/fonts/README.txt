@@ -1,0 +1,1 @@
+The fonts are required libraries for the docgen UI/UX.
